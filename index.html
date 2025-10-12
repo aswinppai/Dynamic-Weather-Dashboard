@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Weather App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <div class="brand">🌤 My Weather</div>
+    <form id="searchForm" class="search">
+      <input id="cityInput" placeholder="Search city (e.g. Kochi)" />
+      <button class="btn search-button" type="submit">Search</button>
+      <button id="unitToggle" class="btn">°F</button>
+
+
+    </form>
+    <button id="locateBtn" class="btn">📍</button>
+  </header>
+
+  <!-- Current Weather -->
+  <section id="current" class="card weather-card">
+    <div class="main-info">
+      <img id="curIcon" class="weather-icon" src="" width="100" />
+      <div>
+        <div id="locationName" style="font-size:1.2rem; font-weight:600;">--</div>
+        <div>Local Time: <span id="localTime">--:--</span></div>
+         <div id="curTemp" class="temp">--°C</div>
+        <div id="curDesc">---</div>
+        <div>Humidity: <span id="curHum">--%</span></div>
+        <div>Wind: <span id="curWind">-- m/s</span></div>
+        <div>Visibility: <span id="visibility">-- km</span></div>
+        <div>Dew Point: <span id="dewPoint">--°C</span></div>
+        <div>Wind Direction: <span id="windDir">--</span></div>
+
+
+      </div>
+    </div>
+    <div class="extra-metrics">
+      <span>Feels Like: <span id="feelsLike">--°C</span></span>
+      <span>Pressure: <span id="pressure">-- hPa</span></span>
+      <div>Sunrise: <span id="sunrise">--:--</span></div>
+      <div>Sunset: <span id="sunset">--:--</span></div>
+    </div>
+  </section>
+
+  <!-- Hourly Forecast -->
+  <section class="card">
+    <h3>Hourly (next 24h)</h3>
+    <div class="carousel">
+      <button id="prevHour" class="arrow">←</button>
+      <div id="hourly" class="hourly-scroll-container"></div>
+      <button id="nextHour" class="arrow">→</button>
+    </div>
+  </section>
+
+  <!-- Weekly Forecast -->
+  <section>
+    <h3>Weekly Forecast</h3>
+    <div id="weekly" class="weekly-forecast-container"></div>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* Body Background Update */
+body {
+  margin:0;
+  font-family: "Inter", Arial, sans-serif;
+  background: linear-gradient(145deg, #1A4D8C 0%, #3B82F6 50%, #60A5FA 100%);
+  color:#fff;
+  min-height:100vh;
+  padding:1rem;
+  transition: background-color 0.5s ease;
+}
+
+.app{max-width:960px;margin:0 auto;}
+.header{display:flex;gap:1rem;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.brand{font-weight:700;font-size:1.5rem}
+.search input{padding:0.6rem;border-radius:8px;border:none;outline:none;min-width:220px}
+.btn{padding:0.6rem 0.9rem;border-radius:8px;border:none;background:#ffffff33;color:#fff;cursor:pointer;transition:0.3s}
+.btn:hover{background:#ffffff55;}
+
+/* Card styling */
+.card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  padding:1rem;
+  border-radius:16px;
+  margin-bottom:1.2rem;
+  box-shadow:0 6px 20px rgba(0,0,0,0.25);
+  transition:transform 0.3s ease;
+}
+.card:hover{ transform: translateY(-5px); }
+
+/* Weather card */
+.weather-card {
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+.main-info { display:flex; gap:1rem; align-items:center; }
+.temp{font-size:2.5rem;font-weight:bold}
+.extra-metrics { display:flex; gap:2rem; opacity:0.9; }
+
+/* Hover effects for hourly and weekly */
+.hourly-item, .weekly-item, .search-button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.hourly-item:hover, .weekly-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  background-color: rgba(255,255,255,0.3);
+}
+
+/* Floating weather icon */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+.weather-icon { animation: float 4s ease-in-out infinite; }
+
+/* Hourly scroll styling */
+.hourly-scroll-container {
+  display:flex;
+  overflow-x:auto;
+  gap:1rem;
+  padding:0.5rem;
+  /* Scroll snapping for smoother alignment */
+  scroll-snap-type: x mandatory;
+}
+.hourly-item {
+  flex:0 0 auto;
+  min-width:80px;
+  background:rgba(255,255,255,0.15);
+  padding:0.6rem;
+  border-radius:10px;
+  text-align:center;
+  /* Scroll snap alignment */
+  scroll-snap-align: start;
+}
+
+/* Custom Scrollbar */
+.hourly-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.hourly-scroll-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.hourly-scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+.hourly-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Weekly Forecast (cloud effect) */
+.weekly-forecast-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+.weekly-item {
+  text-align: center;
+  width: 18%;
+  margin-left: -10px;
+  transform: rotate(-1deg);
+  background: rgba(255,255,255,0.15);
+  padding:0.5rem;
+  border-radius:12px;
+  transition:0.3s;
+}
+.weekly-item:first-child { margin-left: 0; transform: rotate(1deg); }
+.weekly-item:last-child { transform: rotate(-0.5deg); }
+.weekly-item:hover { z-index: 10; }
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.arrow {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Hide arrows on mobile */
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}
+
+/* Night style (your current dark style) */
+.night-card {
+  background: #2f3b52;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 20px;
+}
+
+/* Day style (new polished style) */
+.day-card {
+  background: linear-gradient(135deg, #87CEFA 0%, #B0E0E6 100%);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+  color: #1a1a1a;
+  padding: 20px;
+}
+
